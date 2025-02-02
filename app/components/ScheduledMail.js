@@ -13,3 +13,5 @@ const ScheduledMail = ({ mailings }) => {
     </div>
   );
 };
+
+export default ScheduledMail;
