@@ -1,16 +1,14 @@
 import { useForm } from "react-hook-form";
-import { fetchMailers, fetchLists } from "../utils/mockApi";
+import { fetchMailers, fetchLists } from "../../utils/mockApi";
 
-const ScheduledMailForm = () => {
+const ScheduledMailForm = ({ onSubmit }) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = async (data) => {
-    console.log("Scheduled Mailing:", data);
-  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label>
         Mailer:
-        <select {...register("mailerId")}>
+        <select {...register("mailerId", { required: true })}>
           {fetchMailers.map((mailer) => (
             <option key={mailer.id} value={mailer.id}>
               {mailer.name}
@@ -21,7 +19,7 @@ const ScheduledMailForm = () => {
 
       <label>
         List:
-        <select {...register("listId")}>
+        <select {...register("listId", { required: true })}>
           {fetchLists.map((list) => (
             <option key={list.id} value={list.id}>
               {list.name}
@@ -32,7 +30,10 @@ const ScheduledMailForm = () => {
 
       <label>
         Scheduled Date and Time:
-        <input type="datetime-local" {...register("schedule")} />
+        <input
+          type="datetime-local"
+          {...register("schedule", { required: true })}
+        />
       </label>
 
       <button type="submit">Schedule Mailing</button>
