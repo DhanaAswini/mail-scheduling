@@ -1,32 +1,40 @@
-First, run the development server:
+Mailing Scheduler
+A Next.js application to schedule email campaigns with CRUD (Create, Read, Update, Delete) functionality.
 
-```bash
+Features
+Create Mailing: Schedule a new mailing by selecting a mailer, list, and date/time.
+Read Mailings: View a list of all scheduled mailings.
+Update Mailing: Edit an existing scheduled mailing.
+Delete Mailing: Remove a scheduled mailing.
+Responsive Design: Built with Tailwind CSS for a clean and modern look.
+
+Prerequisites
+Node.js (v16 or higher)
+npm (v7 or higher)
+
+Setup Instructions
+Clone the Repository:
+git clone https://github.com/your-username/mailing-scheduler.git
+cd mailing-scheduler
+
+Install Dependencies:
+npm install
+Set Up Tailwind CSS:
+
+Tailwind CSS is already configured in the project. If you need to reconfigure it, run:
+npx tailwindcss init -p
+
+Run the Development Server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the Application:
+Visit http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Mock API
+The project uses a mock API for demonstration purposes. The following endpoints are available:
+Fetch Mailers: Returns a list of mailer templates.
+Fetch Lists: Returns a list of mailing lists.
+Create Mailing: Saves a new mailing.
+Fetch Mailings: Returns a list of scheduled mailings.
+Update Mailing: Updates an existing mailing.
+Delete Mailing: Deletes a scheduled mailing.
